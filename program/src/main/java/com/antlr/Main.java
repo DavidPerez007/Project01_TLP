@@ -16,6 +16,7 @@ public class Main {
 
     public static class opArt {
         public void analizar() {
+            Calculator calculator = new Calculator();
             String input = "";
             System.out.println("Introduce una expresión fija:");
             System.out.println();
@@ -29,10 +30,15 @@ public class Main {
                 CommonTokenStream tokens = new CommonTokenStream(lexer);
                 LanguageParser parser = new LanguageParser(tokens);
                 ParseTree tree = parser.prog();
+                //Evaluar
+                // calculator.evaluateExpression(input);
+                
                 System.out.println("El resultado es: " + tree.toStringTree(parser));
 
             } while (!input.equals("exit"));
 
         }
-    }
+    }  
+    
+    
 }

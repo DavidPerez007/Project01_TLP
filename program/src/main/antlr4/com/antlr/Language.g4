@@ -1,22 +1,12 @@
 grammar Language;
-prog
-    : '(' SumaResta ')'
-    ;
-SumaResta
-    : ('+'|'-') SumaResta ' ' SumaResta
-    | ProductoDivision
-    ;
-ProductoDivision
-    : ('*'|'/') ProductoDivision ' ' ProductoDivision
-    | Potencia
-    ;
-Potencia
-    : '^' Num ' ' Num
+prog: '(' expr ')';
+expr: operador ' ' expr+ 
     | Num
-    | '(' SumaResta ')'
+    | '(' expr ')'
     ;
 Num
-    : DIG
-    | DIG '.' DIG
+    : INT
+    | INT '.' INT
     ;
-DIG:[0-9]+;
+operador:'^'| '*' | '/' | '+' | '-' ;
+INT:[0-9]+;

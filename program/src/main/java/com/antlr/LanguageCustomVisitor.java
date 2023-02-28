@@ -1,8 +1,8 @@
 
-package com.antlr;
+// package com.antlr;
 
-public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
+// public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
 
 
 
-}
+// }
