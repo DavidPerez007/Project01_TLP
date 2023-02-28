@@ -3,15 +3,15 @@ prog
     : '(' expr ')'
     ;
 expr
-    : suma_resta expr ' ' expr
+    : suma_resta ' ' expr ' ' expr
     | term
     ;
 term
-    : mult_div expr ' ' expr
+    : mult_div ' ' expr ' ' expr
     | factor
     ;
 factor
-    : pot expr ' ' expr
+    : pot ' ' expr ' ' expr
     | Num
     | '(' expr ')'
     ;
