@@ -3,7 +3,15 @@ prog
     : '(' expr ')'
     ;
 expr
-    : operador expr ' ' expr
+    : suma_resta expr ' ' expr
+    | term
+    ;
+term
+    : mult_div expr ' ' expr
+    | factor
+    ;
+factor
+    : pot expr ' ' expr
     | Num
     | '(' expr ')'
     ;
@@ -11,6 +19,8 @@ Num
     : INT
     | INT '.' INT
     ;
-operador:'^'| '*' | '/' | '+' | '-' ;
+suma_resta: '+' | '-' ;
+mult_div: '*' | '/';
+pot: '^';
 NEWLINE : [\r\n]+ -> skip;
 INT:[0-9]+;
